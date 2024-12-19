@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 //Funções de Comprimento
 float metros_para_centimetros(float metros) {return metros * 100;}
 float metros_para_milimetros(float metros){return metros * 1000;}
@@ -12,6 +11,18 @@ float quilograma_para_grama(float quilograma){return quilograma * 1000;}
 float quilograma_para_tonelada(float quilograma){return quilograma / 1000;}
 float tonelada_para_quilograma(float tonelada){return tonelada * 1000;}
 float grama_para_quilograma(float grama){return grama / 1000;}
+
+// Funções de Área
+float metrosquadrados_centimetrosquadrados (float metros) {return metros * 10000;}
+float centimetrosquadrados_metrosquadrados (float centimetros) {return centimetros / 10000;}
+
+// Funções de Tempo
+float segundos_horas (float segundos) {return segundos / 3600;}
+float segundos_minutos (float segundos) {return segundos / 60;}
+float horas_segundos (float horas) {return horas * 3600;}
+float horas_minutos (float horas) {return horas * 60;}
+float minutos_segundos (float minutos) {return minutos * 60;}
+float minutos_horas (float minutos) {return minutos / 60;}
 
 //Função Principal
 void main(){
@@ -27,6 +38,7 @@ void main(){
         printf("4. Unidades de Temperatura\n");
         printf("5. Unidades de Velocidade\n");
         printf("6. Unidades de Tempo\n");
+        printf("7. Unidades de Area\n");
         printf("0. Sair\n");
         printf("Opcao: ");
         scanf("%d", &opcao);
@@ -79,6 +91,7 @@ void main(){
                         break;
                     }   
                 }
+        
                 
                 break;
             case 2: 
@@ -121,10 +134,122 @@ void main(){
                     default:
                         printf("Opcao invalida! Tente novamente.\n");
                         break;
-                    }   
+                    } 
+            case 3:
+                while(1){
+                    printf("Escolha uma conversao:\n");
+                    printf("1. Metros Quadrados para Centimetros Quadrados\n");
+                    printf("2. Centimetros Quadrados para Metros Quadrados\n");
+                    printf("Opçao: ");
+                    scanf("%d", &conversao);
+
+                    if (conversao == 0) {
+                        printf ("Voltando ao menu de conversoes...\n");
+                        break;
+                    }
+
+                    printf("Digite o valor: ");
+                    scanf("%f", &valor);
+
+                    switch (conversao){
+                    case 1:
+                            resultado = metrosquadrados_centimetrosquadrados(valor);
+                            printf("%.2f metros quadrados = %.2f centimetros quadrados\n", valor, resultado);
+                        break;
+                    case 2: 
+                        resultado = centimetrosquadrados_metrosquadrados(valor);
+                            printf("%.2f centimetros quadrados = %.2f metros quadrados\n", valor, resultado);
+                        break;
+                    default:
+                        printf("Opcao invalida! Tente novamente.\n");
+                        break;
+                    } 
+            case 4: 
+                while (1){
+                    printf("Escolha uma conversao:\n");
+                    printf("1. Metros Quadrados para Centimetros Quadrados\n");
+                    printf("2. Centimetros Quadrados para Metros Quadrados\n");
+                    printf("Opçao: ");
+                    scanf("%d", &conversao);
+
+                    if (conversao == 0) {
+                        printf ("Voltando ao menu de conversoes...\n");
+                        break;
+                    }
+
+                    printf("Digite o valor: ");
+                    scanf("%f", &valor);
+
+                    switch (conversao){
+                    case 1:
+                            resultado = metrosquadrados_centimetrosquadrados(valor);
+                            printf("%.2f metros quadrados = %.2f centimetros quadrados\n", valor, resultado);
+                        break;
+                    case 2: 
+                        resultado = centimetrosquadrados_metrosquadrados(valor);
+                            printf("%.2f centimetros quadrados = %.2f metros quadrados\n", valor, resultado);
+                        break;
+                    default:
+                        printf("Opcao invalida! Tente novamente.\n");
+                        break;
+
+                    }
                 }
+            case 5:
+                while (1){
+                    printf("Escolha uma conversao:\n");
+                    printf("1. Segundos para Horas\n");
+                    printf("2. Segundos para Minutos\n");
+                    printf("3. Horas para Segundos\n");
+                    printf("4. Horas para Minutos\n");
+                    printf("5. Minutos para Segundos\n");
+                    printf("6. Minutos para Horas\n");
+                    printf("Opçao: ");
+                    scanf("%d", &conversao);
+
+                    if (conversao == 0) {
+                        printf ("Voltando ao menu de conversoes...\n");
+                        break;
+                    }
+
+                    printf("Digite o valor: ");
+                    scanf("%f", &valor);
+
+                    switch (conversao){
+                    case 1:
+                            resultado = segundos_horas(valor);
+                            printf("%.2f segundos = %.2f horas\n", valor, resultado);
+                        break;
+                    case 2: 
+                        resultado = segundos_minutos(valor);
+                            printf("%.2f segundos = %.2f minutos\n", valor, resultado);
+                        break;
+                    case 3: 
+                        resultado = horas_segundos(valor);
+                            printf("%.2f horas = %.2f segundos\n", valor, resultado);
+                        break;
+                    case 4: 
+                        resultado = horas_minutos(valor);
+                            printf("%.2f horas = %.2f minutos\n", valor, resultado);
+                        break;
+                    case 5: 
+                        resultado = minutos_segundos(valor);
+                            printf("%.2f minutos = %.2f segundos\n", valor, resultado);
+                        break;
+                    case 6: 
+                        resultado = minutos_horas(valor);
+                            printf("%.2f minutos = %.2f horas\n", valor, resultado);
+                        break;
+                    default:
+                        printf("Opcao invalida! Tente novamente.\n");
+                        break;
+
+                }
+            }
             default:
                 break;
         }
     }
+        }
+}
 }
